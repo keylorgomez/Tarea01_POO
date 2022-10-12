@@ -1,5 +1,7 @@
 package gomez.keylor.ui;
 
+import gomez.keylor.bl.Banco;
+
 import java.util.Scanner;
 
 public class UI {
@@ -28,6 +30,9 @@ public class UI {
 
     public static void EjecutarOpcion(int opcion){
         switch (opcion){
+            case 1:
+                agregarCliente();
+                break;
             case 0:
                 System.out.println("Gracias por su visita :)");
                 break;
@@ -35,5 +40,22 @@ public class UI {
                 System.out.println("La opción seleccionada es incorrecta");
                 break;
         }
+    }
+
+    public static void agregarCliente(){
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("Ingrese el nombre del cliente: ");
+        String nombre = entrada.nextLine();
+        System.out.print("Ingrese el número de identificacion: ");
+        String identificacion = entrada.nextLine();
+        System.out.print("Ingrese la fecha de nacimiento (DD-MM-AAAA): ");
+        String fechaNacimiento = entrada.nextLine();
+        System.out.print("Ingrese la edad: ");
+        int edad = entrada.nextInt();
+        System.out.print("Ingrese la dirección de habitación: ");
+        String direccion= entrada.nextLine();
+
+        String resultado= Banco.RegistrarCliente(nombre, identificacion, fechaNacimiento, edad, direccion);
+        System.out.println(resultado);
     }
 }
