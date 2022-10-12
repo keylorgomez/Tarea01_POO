@@ -34,6 +34,21 @@ public class UI {
             case 1:
                 agregarCliente();
                 break;
+            case 2:
+                mostrarClientes();
+                break;
+            case 3:
+                nuevaCuenta();
+                break;
+            case 4:
+                RealizarDeposito();
+                break;
+            case 5:
+                RealizarRetiro();
+                break;
+            case 6:
+                ConsultarSaldo();
+                break;
             case 0:
                 System.out.println("Gracias por su visita :)");
                 break;
