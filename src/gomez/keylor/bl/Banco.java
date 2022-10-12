@@ -30,5 +30,11 @@ public class Banco {
         }
     }
 
-
+    public static String[] clientesRegistrados(){
+        String listaClientesTemporal []= new String[listaClientes.size()];
+        for(int contador=0;contador<listaClientesTemporal.length;contador++){
+            listaClientesTemporal[contador]=listaClientes.get(contador).toString();
+        }
+        return  listaClientesTemporal;
+    }
 }
