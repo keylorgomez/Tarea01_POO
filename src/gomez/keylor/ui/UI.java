@@ -58,4 +58,10 @@ public class UI {
         String resultado= Banco.RegistrarCliente(nombre, identificacion, fechaNacimiento, edad, direccion);
         System.out.println(resultado);
     }
+
+    public  static void mostrarClientes(){
+        for (String clienteTemp : Banco.clientesRegistrados()){
+            System.out.println(clienteTemp);
+        }
+    }
 }
