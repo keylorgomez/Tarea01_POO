@@ -112,5 +112,22 @@ public class Banco {
         return retiro;
     }
 
-    
+    public static double MostrarSaldo(String numeroCuenta){
+        boolean validarNumCuenta=false;
+        int indice=0;
+        double Saldocuenta;
+        for(int i=0;i< listanumeroCuenta.size();i++){
+            if(numeroCuenta.equals(listanumeroCuenta.get(i)) ){
+                validarNumCuenta=true;
+                indice=i;
+                break;
+            }
+        }
+        if (validarNumCuenta==true){
+            Saldocuenta=listaSaldosCuentas.get(indice);
+        }else {
+            Saldocuenta=-1;
+        }
+        return Saldocuenta;
+    }
 }
