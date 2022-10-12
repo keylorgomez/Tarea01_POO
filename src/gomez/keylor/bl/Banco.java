@@ -86,5 +86,31 @@ public class Banco {
         return deposito;
     }
 
+    public static double GenerarRetiro(String numeroCuenta, double retiro){
+        boolean validarNumCuenta=false;
+        int indice=0;
+        double Saldocuenta;
+        for(int i=0;i< listanumeroCuenta.size();i++){
+            if(numeroCuenta.equals(listanumeroCuenta.get(i)) ){
+                validarNumCuenta=true;
+                indice=i;
+                break;
+            }
+        }
+        if (validarNumCuenta==true){
+            if (retiro <= listaSaldosCuentas.get(indice) && retiro>0){
+                Saldocuenta=listaSaldosCuentas.get(indice)-retiro;
+                listaSaldosCuentas.set(indice,Saldocuenta);
+            }else{
+                retiro=-1;
+            }
+        }else{
+            retiro=0;
+        }
+
+        System.out.println(listaSaldosCuentas);
+        return retiro;
+    }
+
     
 }
