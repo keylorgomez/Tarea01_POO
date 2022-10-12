@@ -22,7 +22,18 @@ public class UI {
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
             opcion = entrada.nextInt();
-            //EjecutarOpcion(opcion);
+            EjecutarOpcion(opcion);
         } while (opcion != 0);
+    }
+
+    public static void EjecutarOpcion(int opcion){
+        switch (opcion){
+            case 0:
+                System.out.println("Gracias por su visita :)");
+                break;
+            default:
+                System.out.println("La opción seleccionada es incorrecta");
+                break;
+        }
     }
 }
