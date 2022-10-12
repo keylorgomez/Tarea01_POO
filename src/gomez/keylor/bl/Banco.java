@@ -37,4 +37,31 @@ public class Banco {
         }
         return  listaClientesTemporal;
     }
+
+    public  static String CrearCuenta(String identificacion, String numeroCuenta, double saldo){
+        boolean validarClient=false;
+        for (int i=0;i<listaCedulas.size();i++){
+            if (identificacion.equals(listaCedulas.get(i))){
+                validarClient=true;
+                break;
+            }
+        }
+        if (validarClient==true){
+            if (saldo>=50000){
+                Cuenta cuenta1= new Cuenta(identificacion,numeroCuenta,saldo);
+                listaCuentas.add(cuenta1);
+                listanumeroCuenta.add(cuenta1.getNumeroCuenta());
+                listaSaldosCuentas.add(cuenta1.getSaldo());
+
+                return "Se registró la cuenta de manera exitosa, asociada al número de cédula: "+cuenta1.getIdetificacion()+"\n" +
+                        "El número de su nueva cuenta es: "+cuenta1.getNumeroCuenta();
+            }
+            else{
+                return "Para crear una cuenta el saldo debe ser igual o superior a ₡50.000 y la longitud de dígitos del número de cuenta debe ser igual a 7";
+            }
+        } else {
+            return "No hay ngún cliente registrado bajo ese número de identificación.";
+        }
+    }
+    
 }
