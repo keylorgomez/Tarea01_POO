@@ -60,8 +60,31 @@ public class Banco {
                 return "Para crear una cuenta el saldo debe ser igual o superior a ₡50.000 y la longitud de dígitos del número de cuenta debe ser igual a 7";
             }
         } else {
-            return "No hay ngún cliente registrado bajo ese número de identificación.";
+            return "No hay nigún cliente registrado bajo ese número de identificación.";
         }
     }
+    public static double GenerarDeposito(String numeroCuenta, double deposito){
+        boolean validarNumCuenta=false;
+        int indice=0;
+        double Saldocuenta;
+        for(int i=0;i< listanumeroCuenta.size();i++){
+            if(numeroCuenta.equals(listanumeroCuenta.get(i)) ){
+                validarNumCuenta=true;
+                indice=i;
+                break;
+            }
+        }
+        if (validarNumCuenta==true){
+            if (deposito>0){
+                Saldocuenta=listaSaldosCuentas.get(indice)+deposito;
+                listaSaldosCuentas.set(indice,Saldocuenta);
+            }
+
+        }else{
+            deposito=0;
+        }
+        return deposito;
+    }
+
     
 }
