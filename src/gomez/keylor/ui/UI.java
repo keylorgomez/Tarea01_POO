@@ -5,12 +5,22 @@ import gomez.keylor.bl.Banco;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * @author Keylor Gómez Rodríguez
+ * @version 2.0
+ * @since 12-10-22
+ *
+ * Ejecuta todas las funciones establecidas en el controlador
+ */
 public class UI {
 
     public static void main(String[] args) {
         SeleccionarOpcion();
     }
 
+    /**
+     * Función que muestra el menú de opciones
+     */
     public static void SeleccionarOpcion(){
         Scanner entrada = new Scanner(System.in);
         int opcion = -1;
@@ -29,6 +39,10 @@ public class UI {
         } while (opcion != 0);
     }
 
+    /**
+     * Funcion que analiza la opcion selecionada y ejecuta
+     * @param opcion opcion selecionada del menu
+     */
     public static void EjecutarOpcion(int opcion){
         switch (opcion){
             case 1:
@@ -58,6 +72,9 @@ public class UI {
         }
     }
 
+    /**
+     * Funcion en la que se ingresan los datos requeridos para crear un usuario
+     */
     public static void agregarCliente(){
         Scanner entrada = new Scanner(System.in);
         System.out.print("Ingrese el nombre del cliente: ");
@@ -75,12 +92,18 @@ public class UI {
         System.out.println(resultado);
     }
 
+    /**
+     * Función que lista cada uno de los clientes que se encuentran en el sistema
+      */
     public  static void mostrarClientes(){
         for (String clienteTemp : Banco.clientesRegistrados()){
             System.out.println(clienteTemp);
         }
     }
 
+    /**
+     * Funcion en la que se ingresan los datos requeridos para crear una nueva cuenta
+     */
     public static void nuevaCuenta(){
         Random numeroAleatorio= new Random();
         Scanner entrada = new Scanner(System.in);
@@ -98,6 +121,9 @@ public class UI {
         System.out.println(resultado);
     }
 
+    /**
+     * Funcion en la que se ingresan los datos para generar un deposito en la cuenta
+     */
     public  static void RealizarDeposito(){
         Scanner entrada = new Scanner(System.in);
         System.out.print("Ingrese el número de cuenta del cliente: ");
@@ -113,6 +139,9 @@ public class UI {
         }
     }
 
+    /**
+     * Funcion en la que se ingresan los datos necesarios para  realizar un retiro de dinero de la cuenta
+     */
     public static void RealizarRetiro(){
         Scanner entrada = new Scanner(System.in);
         System.out.print("Ingrese el número de cuenta del cliente: ");
@@ -130,6 +159,9 @@ public class UI {
         }
     }
 
+    /**
+     * Funcion en la que se ingresan los datos requiridos para mostrar el saldo correspondiente de cada cuenta
+     */
     public static void ConsultarSaldo(){
         Scanner entrada = new Scanner(System.in);
         System.out.print("Ingrese el número de cuenta del cliente: ");
