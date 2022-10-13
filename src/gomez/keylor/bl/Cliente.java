@@ -1,6 +1,17 @@
 package gomez.keylor.bl;
 
+/**
+ * @author Keylor Gómez Rodríguez
+ * @version 2.0
+ * @since 12-10-2022
+ *
+ * En esta clase se gestionan todos los objetos cliente, cada uno de sus atributos y constructores
+ */
 public class Cliente {
+
+    /**
+     * Acá se definen todos los atributos asociados a la clase Cliente
+     */
     // Creando Atributos clase Cliente
     private String nombre;
     private String identificacion;
@@ -8,9 +19,14 @@ public class Cliente {
     private int edad;
     private String direccion;
 
+
+
     //Creando los getters and setters
 
-
+    /**
+     * En estos métodos que generan todos los getters and setters asociados a la clase
+     * @return la obtención o la manera de asignar un valor a cada una de las variables
+     */
     public String getNombre() {
         return nombre;
     }
@@ -54,6 +70,14 @@ public class Cliente {
 
     //Creando un constructor que reciba todos los parametros
 
+    /**
+     *
+     * @param nombre es de tipo String y coresponde al nombre del cliente
+     * @param identificacion es de tipo string y corresponde al número de cédula del cliente
+     * @param fechaNacimiento es de tipo String y corresponde a la fecha de nacimiento del cliente
+     * @param edad es de tipo entero y corresponde a la edad del cliente
+     * @param direccion es de tipo String y cooresponde a la dirección de habitación del cliente
+     */
     public Cliente(String nombre, String identificacion, String fechaNacimiento, int edad, String direccion) {
         this.nombre = nombre;
         this.identificacion = identificacion;
@@ -63,6 +87,11 @@ public class Cliente {
     }
     
     //Creando el toString
+
+    /**
+     *
+     * @return retorna el objeto en formato String
+     */
 
     @Override
     public String toString() {
